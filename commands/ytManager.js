@@ -24,6 +24,9 @@ function extractVideoId(link) {
  * @param {Message} message 
  */
 async function handle(message) {
+    const prefix = process.env.PREFIX || '!';
+    if (message.content.startsWith(prefix)) return false;
+
     if (!message.content.includes('youtube.com') && !message.content.includes('youtu.be')) return false;
 
     if (message.content.includes('koutube.com')) return false;

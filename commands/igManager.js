@@ -27,6 +27,8 @@ function extractReelId(link) {
  * @param {Message} message 
  */
 async function handle(message) {
+    const prefix = process.env.PREFIX || '!';
+    if (message.content.startsWith(prefix)) return false;
 
     if (!message.content.includes('instagram.com')) return false;
 
