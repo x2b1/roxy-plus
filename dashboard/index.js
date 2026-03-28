@@ -1312,7 +1312,7 @@ module.exports = (client) => {
         }
     });
 
-    app.listen(port, () => {
-        console.log(`Dashboard is running on http://localhost:${port}`);
+    app.listen(port, '0.0.0.0', () => {
+        console.log(`Dashboard is running on port ${port}`);
     });
 };
